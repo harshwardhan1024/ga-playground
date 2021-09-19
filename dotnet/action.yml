@@ -1,0 +1,10 @@
+name: Dotnet Action
+description: Build, Test, Deploy dotnet
+runs:
+  using: composite
+  steps:
+    - run: echo Dotnet Action
+    - run: echo Clone project
+    - run: echo Build project
+    - run: echo Test project
+    - run: echo Deploy project

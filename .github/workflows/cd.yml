@@ -1,0 +1,7 @@
+name: Continous Delivery Workflow
+
+jobs:
+  dotnet:
+    runs-on: windows-latest
+    steps:
+      - uses: ./dotnet/action.yml

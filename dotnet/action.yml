@@ -4,7 +4,12 @@ runs:
   using: "composite"
   steps:
     - run: echo Dotnet Action
+      shell: bash
     - run: echo Clone project
+      shell: bash
     - run: echo Build project
+      shell: bash
     - run: echo Test project
+      shell: bash
     - run: echo Deploy project
+      shell: bash

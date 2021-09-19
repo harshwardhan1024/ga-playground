@@ -6,4 +6,5 @@ jobs:
   dotnet:
     runs-on: windows-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: ./dotnet/action.yml

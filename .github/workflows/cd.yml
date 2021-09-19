@@ -1,5 +1,7 @@
 name: Continous Delivery Workflow
 
+on: [push]
+
 jobs:
   dotnet:
     runs-on: windows-latest

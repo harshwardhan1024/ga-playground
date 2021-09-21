@@ -1,5 +1,8 @@
 name: Dotnet Action
 description: Build, Test, Deploy dotnet
+inputs:
+  webGitUrl:
+    required: true
 runs:
   using: "composite"
   steps:
@@ -11,5 +14,5 @@ runs:
       shell: bash
     - run: echo Test project
       shell: bash
-    - run: echo Deploy project
+    - run: echo Deploy project ${{ inputs.webGitUrl }}
       shell: bash

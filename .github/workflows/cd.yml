@@ -3,9 +3,20 @@ name: Continous Delivery Workflow
 on: [push]
 
 jobs:
-  dotnet:
-    runs-on: windows-latest
+  infra:
+    runs-on: ubuntu-latest
+    output:
+      webGitUrl: ${{ steps.setup-infra.outputs.webGitUrl }}
     steps:
       - uses: actions/checkout@v2
-      - run: ls
+      - id: setup-infra
+        uses: ./infra
+
+  dotnet:
+    runs-on: windows-latest
+    needs: [infra]
+    steps:
+      - uses: actions/checkout@v2
       - uses: ./dotnet
+          with:
+            webGitUrl: ${{ jobs.infra.outputs.webGitUrl }}

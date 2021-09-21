@@ -5,7 +5,7 @@ on: [push]
 jobs:
   infra:
     runs-on: ubuntu-latest
-    output:
+    outputs:
       webGitUrl: ${{ steps.setup-infra.outputs.webGitUrl }}
     steps:
       - uses: actions/checkout@v2

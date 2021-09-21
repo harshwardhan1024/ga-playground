@@ -18,5 +18,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./dotnet
-          with:
-            webGitUrl: ${{ jobs.infra.outputs.webGitUrl }}
+        with:
+          webGitUrl: ${{ jobs.infra.outputs.webGitUrl }}

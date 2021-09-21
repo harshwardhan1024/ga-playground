@@ -9,4 +9,5 @@ runs:
   steps:
     - id: webGitUrl
       run: echo "::set-output name=url::https://google.com"
+      shell: bash
     

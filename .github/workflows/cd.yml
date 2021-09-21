@@ -14,9 +14,9 @@ jobs:
 
   dotnet:
     runs-on: windows-latest
-    needs: [infra]
+    needs: infra
     steps:
       - uses: actions/checkout@v2
       - uses: ./dotnet
         with:
-          webGitUrl: ${{ jobs.infra.outputs.webGitUrl }}
+          webGitUrl: ${{ needs.infra.outputs.webGitUrl }}

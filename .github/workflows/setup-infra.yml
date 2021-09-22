@@ -1,0 +1,16 @@
+name: Step Infra
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Environment which needs to be created
+        required: true
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.event.inputs.environment }}
+
+

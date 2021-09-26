@@ -1,11 +1,6 @@
-name: Step Infra
+name: Setup Infra
 
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: Environment which needs to be created
-        required: true
+on: push
 
 jobs:
   start:

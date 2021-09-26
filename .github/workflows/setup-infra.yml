@@ -1,9 +1,6 @@
 name: Setup Infra
 
-on:
-  push:
-    paths:
-      - 'infra/*'
+on: push
 
 jobs:
   start:
@@ -15,7 +12,7 @@ jobs:
           value: 'some value'
           repository: honey-ramgarhia/ga-playground
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          
+
       - run: echo ${{ secrets.INFRA_SECRET }}
 
       # - run: exit 1

@@ -1,6 +1,11 @@
 name: Setup Infra
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      environments:
+        description: Enter comma separated envs which needs to be created (e.g. dev,qc,stg)
+        required: true
 
 jobs:
 
@@ -8,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: echo ${{ github.event.inputs.environments }}
       - uses: hmanzur/actions-set-secret@v2.0.0
         with:
           name: 'INFRA_SECRET'

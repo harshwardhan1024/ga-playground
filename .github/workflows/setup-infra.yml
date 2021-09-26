@@ -3,7 +3,7 @@ name: Setup Infra
 on:
   push:
     paths:
-      - './infra'
+      - 'infra/*'
 
 jobs:
   start:

@@ -1,0 +1,17 @@
+name: Continous Delivery (dotnet)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - dotnet/*
+
+jobs:
+
+  build_test_and_publish:
+    runs-on: windows-latest
+    needs: infra
+    steps:
+      - uses: actions/checkout@v2
+      - run: ${{ secrets.INFRA_SECRET }} 

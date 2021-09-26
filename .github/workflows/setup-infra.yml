@@ -1,10 +1,12 @@
 name: Setup Infra
 
-on: push
+on: workflow_dispatch
 
 jobs:
-  start:
+
+  create_or_update_infra:
     runs-on: ubuntu-latest
+
     steps:
       - uses: hmanzur/actions-set-secret@v2.0.0
         with:
@@ -12,8 +14,4 @@ jobs:
           value: 'some value'
           repository: honey-ramgarhia/ga-playground
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-
-      - run: echo ${{ secrets.INFRA_SECRET }}
-
-      # - run: exit 1
 

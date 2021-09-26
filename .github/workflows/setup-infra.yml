@@ -1,6 +1,9 @@
 name: Setup Infra
 
-on: push
+on:
+  push:
+    paths:
+      - './infra'
 
 jobs:
   start:

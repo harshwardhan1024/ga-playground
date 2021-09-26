@@ -9,6 +9,14 @@ jobs:
   start:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event.inputs.environment }}
+      - uses: hmanzur/actions-set-secret@v2.0.0
+        with:
+          name: 'INFRA_SECRET'
+          value: 'some value'
+          repository: honey-ramgarhia/ga-playground
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          
+      - run: echo ${{ secrets.INFRA_SECRET }}
+
       # - run: exit 1
 

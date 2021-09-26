@@ -7,7 +7,7 @@ on:
       - completed
   push:
     paths:
-      - './dotnet'
+      - 'dotnet/*'
 
 jobs:
   infra:
